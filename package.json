@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "npx vite build",
+    "build": "node -e \"(async()=>{const { build } = await import('vite'); await build();})().catch(e=>{console.error(e); process.exit(1)})\"",
     "preview": "vite preview --port 5173",
     "start:server": "node server/index.js"
   },
